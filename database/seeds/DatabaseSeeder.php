@@ -1,6 +1,8 @@
 <?php
 
+// use File;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Storage;
 
 class DatabaseSeeder extends Seeder
 {
@@ -11,6 +13,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        // File::cleanDirectory(public_path('storage/app/public/wink/images/'));
+        Storage::deleteDirectory('public/tests');
+        Storage::makeDirectory('public/tests');
+        $this->call(PostsTableSeeder::class);
     }
 }
