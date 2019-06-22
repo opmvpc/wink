@@ -12,16 +12,18 @@
             @forelse ($articles as $article)
                 <div class="post-preview">
                     <a href="{{ route('articles.show', $article->slug) }}">
-                    <h2 class="post-title">
-                        {{ $article->title }}
-                    </h2>
-                    <h3 class="post-subtitle">
-                        {{ $article->excerpt }}
-                    </h3>
+                        <h2 class="post-title">
+                            {{ $article->title }}
+                        </h2>
+                        <h3 class="post-subtitle">
+                            {{ $article->excerpt }}
+                        </h3>
                     </a>
-                    <p class="post-meta">Posté par
-                    <a href="#">{{ $article->author->name }}</a>
-                    le {{ $article->publish_date->format('d/m/Y') }}</p>
+                    <p class="post-meta">
+                        Posté par
+                        <a href="#">{{ $article->author->name }}</a>
+                        le {{ $article->publish_date->format('d/m/Y') }}
+                    </p>
                 </div>
                 @unless ($loop->last)
                     <hr>
@@ -33,7 +35,6 @@
             @endforelse
         <!-- Pager -->
         <div class="clearfix">
-            {{-- <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a> --}}
             {!! $articles->links() !!}
         </div>
         </div>

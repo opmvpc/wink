@@ -12,7 +12,7 @@ class HomeController extends Controller
         $articles = Post::live()
             ->with('author')
             ->orderBy('publish_date', 'DESC')
-            ->simplePaginate(1);
+            ->simplePaginate(5);
 
         // dd($articles);
         return view('home.index', [

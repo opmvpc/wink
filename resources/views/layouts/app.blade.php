@@ -22,6 +22,7 @@
 
 <body>
 
+  <!-- Navigation -->
   @include('layouts.nav')
 
   <!-- Page Header -->
@@ -32,6 +33,7 @@
 
   <hr>
 
+  <!-- Footer -->
   @include('layouts.footer')
 
   <script src="{{ asset('js/jquery.js') }}"></script>

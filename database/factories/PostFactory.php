@@ -18,8 +18,8 @@ $factory->define(Post::class, function (Faker $faker) {
         'body' => $faker->paragraphs($nb = 5, $asText = true),
         'published' => true,
         'author_id' => WinkAuthor::first()->id,
-        'featured_image' => '/storage/tests/'.$faker->image($dir='public/storage/tests', $width='800', $height='480', $category='cats', $fullPath=false),
-        'featured_image_caption' => '',
+        'featured_image' => 'theme/img/post-bg.jpg',
+        'featured_image_caption' => 'illustration article',
         'publish_date' =>  $faker->dateTimeThisDecade($max = '+5 years', $timezone = null),
         'meta' => (object) [],
     ];

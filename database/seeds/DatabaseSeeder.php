@@ -3,7 +3,6 @@
 use Wink\WinkPage;
 use Wink\WinkPost;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Storage;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,14 +13,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // on nettoie les images de test
-        if (Storage::exists('public/storage/tests')) {
-            Storage::deleteDirectory('public/storage/tests');
-        }
-        if (! Storage::exists('public/storage/tests')) {
-            Storage::makeDirectory('public/storage/tests');
-        }
-
         // on supprime les posts et page existantes
         WinkPost::truncate();
         WinkPage::truncate();
