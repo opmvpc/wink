@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/articles/{slug}', 'PostController@show')->name('articles.show');
+Route::get('/a-propos', 'PageController@aPropos')->name('a-propos');

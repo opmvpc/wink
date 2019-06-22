@@ -16,7 +16,7 @@ $factory->define(Post::class, function (Faker $faker) {
             return str_slug($post['title']);
         },
         'body' => $faker->paragraphs($nb = 5, $asText = true),
-        'published' => false,
+        'published' => true,
         'author_id' => WinkAuthor::first()->id,
         'featured_image' => '/storage/tests/'.$faker->image($dir='public/storage/tests', $width='800', $height='480', $category='cats', $fullPath=false),
         'featured_image_caption' => '',

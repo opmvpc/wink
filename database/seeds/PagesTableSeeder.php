@@ -11,6 +11,9 @@ class PagesTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $page = factory(App\Models\Page::class)->create([
+            'title' => 'À Propos',
+            'slug' => str_slug('À Propos'),
+        ]);
     }
 }
